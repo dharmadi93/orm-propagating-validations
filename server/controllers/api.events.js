@@ -4,7 +4,7 @@ const Event = require('../models/index')
 
 
 module.exports = {
-    getEvent: function () {
+    getEvent: function (req, res) {
         Event.find(function (err, data) {
             if (err) {
                 res.status(400).json({
@@ -21,7 +21,7 @@ module.exports = {
         })
     },
 
-    addEvent: function () {
+    addEvent: function (req, res) {
         const event = {
             tanggal: req.body.tanggal,
             judul: req.body.judul,
@@ -36,15 +36,15 @@ module.exports = {
         })
     },
 
-    deleteEvent: function () {
+    deleteEvent: function (req, res) {
 
     },
 
-    getEditEvent: function () {
+    getEditEvent: function (req, res) {
 
     },
 
-    editEvent: function () {
+    editEvent: function (req, res) {
 
     }
 }
