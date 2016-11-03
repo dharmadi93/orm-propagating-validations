@@ -55,9 +55,29 @@ function addEventFromAPI(tanggal, judul, nama, email) {
             email: email
         },
         success: function (data) {
-            updateRowAfterInsert(data)
+            if(data.error) {
+                // console.log(data.error)
+                showError(data.error)
+            }
+            else {
+                updateRowAfterInsert(data)
+            }
         }
     })
+}
+
+function showError(err) {
+    var html = `<div id="err" class="alert alert-danger">
+                    ${err}
+                </div>`
+    if(err) {
+        if ($('#err').val() == undefined) {
+            $('#error-message').append(html)
+        }
+        else {
+            $('#err').replaceWith(html)
+        }
+    }
 }
 
 function updateRowAfterInsert(data) {
@@ -79,6 +99,7 @@ function updateRowAfterInsert(data) {
     $('input[name="judul"]').val("")
     $('input[name="nama"]').val("")
     $('input[name="email"]').val("")
+    $('#err').remove()
 }
 //------------------ADD EVENT END---------------------
 

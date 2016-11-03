@@ -5,6 +5,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var session = require('express-session')
 var bodyParser = require('body-parser');
 var cors = require('cors')
 
@@ -26,6 +27,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'abcdefgh',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 5000
+  }
+}))
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')));
 

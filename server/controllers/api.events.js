@@ -31,9 +31,14 @@ module.exports = {
 
         Event.create(event, function (err, data) {
             // if (err) res.status(400).json({'message': err.errors.tanggal.message})
-            if (err) res.status(400).json({'message': err})
-            // if (!data) res.status(304).json({'message': 'failed to add'})
-            res.json(data)
+            if (err) {
+                // res.status(400).json({'message': req.session.error = "testing error"})
+                // if (!data) res.status(304).json({'message': 'failed to add'})
+                res.json({'error': req.session.error = err.message})
+            }
+            else {
+                res.json(data)
+            }
         })
     },
 
