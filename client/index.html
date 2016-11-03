@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" class="btn btn-default" name="createEvent">Submit</button>
                     </div>
                 </div>
             </form>
@@ -64,23 +64,19 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <table id="tableEvents" class="table table-bordered">
+            <table class="table table-bordered">
                 <thead>
                 <tr>
                     <th>Tanggal</th>
                     <th>Judul</th>
                     <th>Nama</th>
                     <th>Event</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
 
-                <tbody>
-                <tr>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
+                <tbody id="tableEvents">
+
                 </tbody>
             </table>
         </div>

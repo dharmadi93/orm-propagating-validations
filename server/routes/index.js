@@ -7,6 +7,7 @@ var controller = require('../controllers/api.events')
 
 router.get('/', controller.getEvent)
 router.post('/event/create', controller.addEvent)
+router.delete('/event/delete/:id', controller.deleteEvent)
 
 
 module.exports = router;

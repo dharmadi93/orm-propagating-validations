@@ -38,7 +38,12 @@ module.exports = {
     },
 
     deleteEvent: function (req, res) {
-
+        Event.findOneAndRemove({
+            _id: req.params.id
+        }, function (err, data) {
+            if (err) throw err
+            res.json(data)
+        })
     },
 
     getEditEvent: function (req, res) {
