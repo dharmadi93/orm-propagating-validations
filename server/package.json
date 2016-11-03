@@ -12,6 +12,7 @@
     "dotenv": "^2.0.0",
     "ejs": "~2.4.1",
     "express": "~4.13.4",
+    "express-session": "^1.14.2",
     "mongodb": "^2.2.11",
     "mongoose": "^4.6.5",
     "mongoose-beautiful-unique-validation": "^5.1.1",
