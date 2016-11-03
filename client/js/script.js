@@ -89,7 +89,7 @@ function updateRowAfterInsert(data) {
                             <td>
                                 <span>
                                     <!--<button class="btn btn-warning" onclick="editEvent(data._id)">Edit</button>-->
-                                    <button class="btn btn-danger" onclick="deleteEvent(${data._id}, ${data.judul})">Delete</button>
+                                    <button class="btn btn-danger" onclick="deleteEvent('${data._id}', '${data.judul}')">Delete</button>
                                 </span>
                             </td>
                         </tr>`
